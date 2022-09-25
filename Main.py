@@ -80,6 +80,7 @@ def launcher(base , sg):
 def main():
     base="USDT"
     sg="$"
+    print(f"{Fore.LIGHTRED_EX}Please wait ...{Fore.RESET}")
     while 1:
         try:
             launcher(base  , sg)
@@ -97,15 +98,13 @@ Enter you'r selection : """)
                     if selection=="1":
                         base="USDT"
                         sg="$"
-                        break
                     elif selection=='2':
                         base="EUR"
                         sg="€"
-                        break
                     elif selection=='4':
                         return 1
-                    else:
-                        break
+                    print(f"{Fore.LIGHTRED_EX}Please wait ...{Fore.RESET }")
+                    break
 
                 except :
                     pass
