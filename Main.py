@@ -2,7 +2,7 @@ from requests import get
 from os import system
 from platform import system as osType
 from colorama import Fore
-
+from tools import updater
 def getPrice(base):
     def regPrice(url):
         response = get(url)
@@ -89,7 +89,8 @@ def main():
                 clear()
                 selection=input("""
 1. USD      2. EUR
-3. Back     4. Exit
+3. Back     4. Check for updates
+5. Exit
 
 
 Enter you'r selection : """)
@@ -101,7 +102,9 @@ Enter you'r selection : """)
                     elif selection=='2':
                         base="EUR"
                         sg="€"
-                    elif selection=='4':
+                    elif selection=="4":
+                        updater.mainUpdater()
+                    elif selection=='5':
                         return 1
                     print(f"{Fore.LIGHTRED_EX}Please wait ...{Fore.RESET }")
                     break
